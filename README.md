@@ -1,20 +1,22 @@
 # usbrelay
 
-This small utility was originally implemented for controlling multiple USB-Relay boards on the Astrophotograpy control computer. 
+This small utility was originally implemented for automation of power management for different components by controlling multiple USB-Relay boards on the Astrophotograpy control computer. 
 
 The implementation is based on the great work of [usb-relay-hid](https://github.com/pavel-a/usb-relay-hid) project by [pavel-a](https://github.com/pavel-a). Most of the common USB-Relay boards from Amazon, Aliexpress or Taobao are supported. The goal of this project is to provide a simple control utility for querying and controlling multiple USB-Relay boards connected to the control Windows computer.
 
 ![](http://vusb.wdfiles.com/local--files/project:driver-less-usb-relays-hid-interface/relay2.jpg)
 
+To build this project, please add [Costura.Fody](https://github.com/Fody/Costura) to the project. (Right click 'usbrelay' project in Visual Studio. Select 'Manage NuGet Packages...')
+
 # binary download
 
-Source/Document download: [github project](https://git.io/JE8nq) 
+Source/Document download: [github project](https://github.com/mxcoppell/usbrelay/) 
 
-Binary download (Windows 10): 
+Binary download (Windows 10): [usbrelay.zip](https://github.com/mxcoppell/usbrelay/blob/master/binary/usbrelay.zip)
 
 # current state
 
-Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
+* Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
 
 # help
 
