@@ -4,17 +4,15 @@ This small utility was originally implemented for automation of power management
 
 The implementation is based on the great work of [usb-relay-hid](https://github.com/pavel-a/usb-relay-hid) project by [pavel-a](https://github.com/pavel-a). Most of the common USB-Relay boards from Amazon, Aliexpress or Taobao are supported. The goal of this project is to provide a simple control utility for querying and controlling multiple USB-Relay boards connected to the control Windows computer.
 
-The binary provided is a stand-alone executable. All required dynamic link libraries are embedded into the the single executable. 
+![2-Channel & 8-Channel USB-Relay Boards](https://github.com/mxcoppell/usbrelay/blob/master/images/usbrelay-boards.jpg?raw=true)
 
-![](http://vusb.wdfiles.com/local--files/project:driver-less-usb-relays-hid-interface/relay2.jpg)
+The binary provided is a stand-alone executable. All required dynamic link libraries are embedded into the the single executable. 
 
 To build this project, please add [Costura.Fody](https://github.com/Fody/Costura) to the project. (Right click 'usbrelay' project in Visual Studio. Select 'Manage NuGet Packages...')
 
-# binary download
+# binary release
 
-Source/Document download: [This GitHub Project](https://github.com/mxcoppell/usbrelay/) 
-
-Binary download (Windows 10): [usbrelay.zip](https://github.com/mxcoppell/usbrelay/blob/master/binary/usbrelay.zip)
+[Version 1.0.0.1](https://github.com/mxcoppell/usbrelay/releases) - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
 
 # current state
 
@@ -61,4 +59,8 @@ EXAMPLES
 
 # examples
 
+# license
 
+The shared library [usb_relay_device.dll] and helper code [UsbRelayDeviceHelper.cs](https://github.com/mxcoppell/usbrelay/blob/master/usbrelay/UsbRelayDeviceHelper.cs) are from project [usb-relay-hid](https://github.com/pavel-a/usb-relay-hid). They are dual-licensed: GPL + commercial.
+
+There are no software packages (SDK) provided by the hardware vendors.
