@@ -41,7 +41,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>usbrelay.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
