@@ -10,11 +10,9 @@ The binary provided is a stand-alone executable. All required dynamic link libra
 
 To build this project, please add [Costura.Fody](https://github.com/Fody/Costura) to the project. (Right click 'usbrelay' project in Visual Studio. Select 'Manage NuGet Packages...')
 
-# binary download
+# binary release
 
-Source/Document download: [This GitHub Project](https://github.com/mxcoppell/usbrelay/) 
-
-Binary download (Windows 10): [usbrelay.zip](https://github.com/mxcoppell/usbrelay/blob/master/binary/usbrelay.zip)
+Version 1.0.0.1 - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
 
 # current state
 
