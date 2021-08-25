@@ -120,7 +120,8 @@ namespace usbrelay
                         if ((status & (1 << (channel - 1))) > 0)
                             Console.Write("ON   ");
                         else
-                            Console.Write("OFF  "); 
+                            Console.Write("OFF  ");
+                    Console.WriteLine();
                 }
 
                 UsbRelayDeviceHelper.Close(device_handle);
