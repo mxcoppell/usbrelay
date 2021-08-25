@@ -12,7 +12,7 @@ To build this project, please add [Costura.Fody](https://github.com/Fody/Costura
 
 # binary release
 
-Version 1.0.0.1 - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
+[Version 1.0.0.1](https://github.com/mxcoppell/usbrelay/releases) - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
 
 # current state
 
