@@ -6,17 +6,19 @@ The implementation is based on the great work of [usb-relay-hid](https://github.
 
 ![](http://vusb.wdfiles.com/local--files/project:driver-less-usb-relays-hid-interface/relay2.jpg)
 
-Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
-
 # binary download
 
 Source/Document download: [github project](https://git.io/JE8nq) 
+
 Binary download (Windows 10): 
 
 # current state
 
+Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
+
 # help
 
+```
 NAME
         usbrelay - a simple utility to control, list and query USB-Relay devices
 
@@ -51,6 +53,7 @@ EXAMPLES
 
         usbrelay -serial BITFT -open 1 -close 2
         usbrelay -serial BITFT -open 1 3 5 -close 2 4 6
+```
 
 # examples
 
