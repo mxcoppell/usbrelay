@@ -10,7 +10,7 @@ To build this project, please add [Costura.Fody](https://github.com/Fody/Costura
 
 # binary download
 
-Source/Document download: [github project](https://github.com/mxcoppell/usbrelay/) 
+Source/Document download: [This GitHub Project](https://github.com/mxcoppell/usbrelay/) 
 
 Binary download (Windows 10): [usbrelay.zip](https://github.com/mxcoppell/usbrelay/blob/master/binary/usbrelay.zip)
 
