@@ -6,7 +6,7 @@ The implementation is based on the great work of [usb-relay-hid](https://github.
 
 The binary provided is a stand-alone executable. All required dynamic link libraries are embedded into the the single executable. 
 
-![](http://vusb.wdfiles.com/local--files/project:driver-less-usb-relays-hid-interface/relay2.jpg)
+![2-Channel & 8-Channel USB-Relay Boards](https://github.com/mxcoppell/usbrelay/blob/master/images/usbrelay-boards.jpg?raw=true)
 
 To build this project, please add [Costura.Fody](https://github.com/Fody/Costura) to the project. (Right click 'usbrelay' project in Visual Studio. Select 'Manage NuGet Packages...')
 
