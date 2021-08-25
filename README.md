@@ -1,8 +1,8 @@
 # usbrelay
 
-This small utility was originally implemented for automation of power management for different components by controlling multiple USB-Relay boards on the Astrophotograpy control computer. 
+This small utility was initially implemented to automate power management for different components by controlling multiple USB-Relay boards on the windows OS based astrophotography control computer. 
 
-The implementation is based on the great work of [usb-relay-hid](https://github.com/pavel-a/usb-relay-hid) project by [pavel-a](https://github.com/pavel-a). Most of the common USB-Relay boards from Amazon, Aliexpress or Taobao are supported. The goal of this project is to provide a simple control utility for querying and controlling multiple USB-Relay boards connected to the control Windows computer.
+The implementation is based on the great work of [usb-relay-hid](https://github.com/pavel-a/usb-relay-hid) project by [pavel-a](https://github.com/pavel-a). Most of the common USB-Relay boards from Amazon, Aliexpress, or Taobao are supported. This project provides a simple control utility for querying and controlling multiple USB-Relay boards connected to the Windows computer.
 
 ![2-Channel & 8-Channel USB-Relay Boards](https://github.com/mxcoppell/usbrelay/blob/master/images/usbrelay-boards.jpg?raw=true)
 
