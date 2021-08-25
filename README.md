@@ -16,7 +16,7 @@ Binary download (Windows 10): [usbrelay.zip](https://github.com/mxcoppell/usbrel
 
 # current state
 
-* Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
+Current version is implemented in C# (VS2019). Porting to other platforms should be straightfoward. 
 
 # help
 
