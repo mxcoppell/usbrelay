@@ -38,7 +38,7 @@ NEWBN_2=0
 
 # binary release
 
-[Version 1.0.0.1](https://github.com/mxcoppell/usbrelay/releases) - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
+[Version 1.0.0.2](https://github.com/mxcoppell/usbrelay/releases/tag/1.0.0.2) - [usbrelay-v1.0.0.2.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.0.2/usbrelay-v1.0.0.2.zip)
 
 # current state
 
