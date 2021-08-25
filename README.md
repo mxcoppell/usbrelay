@@ -10,6 +10,32 @@ The binary provided is a stand-alone executable. All required dynamic link libra
 
 To build this project, please add [Costura.Fody](https://github.com/Fody/Costura) to the project. (Right click 'usbrelay' project in Visual Studio. Select 'Manage NuGet Packages...')
 
+# serial numbers of the USB-Relay boards
+
+Most likely, the boards from Amazon, eBay or other places will come with serial number "BITFT". This will be an issue when two or more USB-Relay boards need to be connected to the same computer. Unique serial numbers need to be assigned to each board.
+
+The easiest way to do this is to use a Linux box. For example, a Raspberry Pi. 
+
+Install 'usbrelay' package.
+```
+> sudo apt install usbrelay
+```
+
+Change the default board serial number 'BITFT' to 'NEWBN'(just an example, your own serial number preferred).
+```
+> sudo usbrelay BITFT=NEWBN
+BITFT_1=0
+BITFT_2=0
+Setting new serial
+```
+
+Verify the new serial number.
+```
+> sudo usbrelay
+NEWBN_1=0
+NEWBN_2=0
+```
+
 # binary release
 
 [Version 1.0.0.1](https://github.com/mxcoppell/usbrelay/releases) - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
