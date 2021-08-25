@@ -125,7 +125,8 @@ namespace usbrelay
             {
                 if (args[arg_index].Substring(0, 1) == "-")
                     return true;
-                int channel = Convert.ToInt32(args[arg_index++]);
+                int channel = 0;
+                try { channel = Convert.ToInt32(args[arg_index++]); } catch { }
                 if (channel > 0)
                     channels.Add(channel);
             }
