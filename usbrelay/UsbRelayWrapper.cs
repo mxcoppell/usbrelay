@@ -41,12 +41,12 @@ namespace usbrelay
             foreach (int i in on_channels)
             {
                 int retval = UsbRelayDeviceHelper.OpenOneRelayChannel(device_handle, i);
-                Console.WriteLine(String.Format("Open channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
+                Console.WriteLine(String.Format("Turn on channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
             }
             foreach (int i in off_channels)
             {
                 int retval = UsbRelayDeviceHelper.CloseOneRelayChannel(device_handle, i);
-                Console.WriteLine(String.Format("Close channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
+                Console.WriteLine(String.Format("Turn off channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
             }
 
             UsbRelayDeviceHelper.Close(device_handle);
