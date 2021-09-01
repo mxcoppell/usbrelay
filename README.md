@@ -38,7 +38,7 @@ NEWBN_2=0
 
 # binary release
 
-[Version 1.0.0.2](https://github.com/mxcoppell/usbrelay/releases/tag/1.0.0.2) - [usbrelay-v1.0.0.2.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.0.2/usbrelay-v1.0.0.2.zip)
+[Version 1.0.0.3](https://github.com/mxcoppell/usbrelay/releases/tag/1.0.0.3) - [usbrelay-v1.0.0.3.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.0.3/usbrelay-v1.0.0.3.zip)
 
 # current state
 
@@ -52,7 +52,7 @@ NAME
 
 SYNOPSIS
         usbrelay [ -list ] [ -status ] [ -serial serial-number ]
-                 [ -open channels ] [ -close channels ]
+                 [ -on channels ] [ -off channels ]
 
 COMMAND LINE OPTIONS
         -list           List all available serial numbers of USB-Relay devices connected.
@@ -62,25 +62,25 @@ COMMAND LINE OPTIONS
         -serial serial-number
                         Specify the serial number of the USB-Relay device to operate.
 
-        -open channels
-                        Open the relay channels specified.
+        -on channels
+                        Turn on the relay channels specified.
 
-        -close channels
-                        Close the relay channels specified.
+        -off channels
+                        Turn off the relay channels specified.
 
 EXAMPLES
         usbrelay -list
 
         usbrelay -status
 
-        usbrelay -serial BITFT -open 1
-        usbrelay -serial BITFT -open 1 2 3
+        usbrelay -serial BITFT -on 1
+        usbrelay -serial BITFT -on 1 2 3
 
-        usbrelay -serial BITFT -close 2
-        usbrelay -serial BITFT -close 2 5 6
+        usbrelay -serial BITFT -off 2
+        usbrelay -serial BITFT -off 2 5 6
 
-        usbrelay -serial BITFT -open 1 -close 2
-        usbrelay -serial BITFT -open 1 3 5 -close 2 4 6
+        usbrelay -serial BITFT -on 1 -off 2
+        usbrelay -serial BITFT -on 1 3 5 -off 2 4 6
 ```
 
 # examples
@@ -105,12 +105,12 @@ SMLFT   OFF  OFF
 BIGFT   OFF  OFF
 ```
 
-On board with serial BIGFT, open channel 1 and close channel 2.
+On board with serial BIGFT, turn on channel 1 and turn off channel 2.
 ```
 PS D:\bin>
-PS D:\bin> .\usbrelay.exe -serial BIGFT -open 1 -close 2
-Open channel 1 on BIGFT: success
-Close channel 2 on BIGFT: success
+PS D:\bin> .\usbrelay.exe -serial BIGFT -on 1 -off 2
+Turn on channel 1 on BIGFT: success
+Turn off channel 2 on BIGFT: success
 
 Serial   C1   C2   C3   C4   C5   C6   C7   C8
 ------  ---- ---- ---- ---- ---- ---- ---- ----
@@ -118,12 +118,12 @@ SMLFT   OFF  OFF
 BIGFT   ON   OFF
 ```
 
-On board with serial SMLFT, open both channel 1 & 2.
+On board with serial SMLFT, turn on both channel 1 & 2.
 ```
 PS D:\bin>
-PS D:\bin> .\usbrelay.exe -serial SMLFT -open 1 2
-Open channel 1 on SMLFT: success
-Open channel 2 on SMLFT: success
+PS D:\bin> .\usbrelay.exe -serial SMLFT -on 1 2
+Turn on channel 1 on SMLFT: success
+Turn on channel 2 on SMLFT: success
 
 Serial   C1   C2   C3   C4   C5   C6   C7   C8
 ------  ---- ---- ---- ---- ---- ---- ---- ----
@@ -131,12 +131,12 @@ SMLFT   ON   ON
 BIGFT   ON   OFF
 ```
 
-On board with serial BIGFT, close both channel 1 & 2.
+On board with serial BIGFT, turn off both channel 1 & 2.
 ```
 PS D:\bin>
-PS D:\bin> .\usbrelay.exe -serial BIGFT -close 1 2
-Close channel 1 on BIGFT: success
-Close channel 2 on BIGFT: success
+PS D:\bin> .\usbrelay.exe -serial BIGFT -off 1 2
+Turn off channel 1 on BIGFT: success
+Turn off channel 2 on BIGFT: success
 
 Serial   C1   C2   C3   C4   C5   C6   C7   C8
 ------  ---- ---- ---- ---- ---- ---- ---- ----
