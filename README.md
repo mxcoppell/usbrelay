@@ -57,7 +57,7 @@ SYNOPSIS
 COMMAND LINE OPTIONS
         -list           List all available serial numbers of USB-Relay devices connected.
 
-        -status         Display open/close status of all the channels on the USB-Relay devices connected.
+        -status         Display on/off status of all the channels on the USB-Relay devices connected.
 
         -serial serial-number
                         Specify the serial number of the USB-Relay device to operate.
