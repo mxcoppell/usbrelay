@@ -38,7 +38,7 @@ NEWBN_2=0
 
 # binary release
 
-[Version 1.0.0.1](https://github.com/mxcoppell/usbrelay/releases) - [usbrelay.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.01/usbrelay.zip)
+[Version 1.0.0.2](https://github.com/mxcoppell/usbrelay/releases/tag/1.0.0.2) - [usbrelay-v1.0.0.2.zip](https://github.com/mxcoppell/usbrelay/releases/download/1.0.0.2/usbrelay-v1.0.0.2.zip)
 
 # current state
 
@@ -84,6 +84,65 @@ EXAMPLES
 ```
 
 # examples
+
+List all availabe USB-Relay boards.
+```
+PS D:\bin>
+PS D:\bin> .\usbrelay.exe -list
+Serial    Type
+------    ----
+SMLFT     TwoChannel
+BIGFT     TwoChannel
+```
+
+Display the status of all availabe ports.
+```
+PS D:\bin>
+PS D:\bin> .\usbrelay.exe -status
+Serial   C1   C2   C3   C4   C5   C6   C7   C8
+------  ---- ---- ---- ---- ---- ---- ---- ----
+SMLFT   OFF  OFF
+BIGFT   OFF  OFF
+```
+
+On board with serial BIGFT, open channel 1 and close channel 2.
+```
+PS D:\bin>
+PS D:\bin> .\usbrelay.exe -serial BIGFT -open 1 -close 2
+Open channel 1 on BIGFT: success
+Close channel 2 on BIGFT: success
+
+Serial   C1   C2   C3   C4   C5   C6   C7   C8
+------  ---- ---- ---- ---- ---- ---- ---- ----
+SMLFT   OFF  OFF
+BIGFT   ON   OFF
+```
+
+On board with serial SMLFT, open both channel 1 & 2.
+```
+PS D:\bin>
+PS D:\bin> .\usbrelay.exe -serial SMLFT -open 1 2
+Open channel 1 on SMLFT: success
+Open channel 2 on SMLFT: success
+
+Serial   C1   C2   C3   C4   C5   C6   C7   C8
+------  ---- ---- ---- ---- ---- ---- ---- ----
+SMLFT   ON   ON
+BIGFT   ON   OFF
+```
+
+On board with serial BIGFT, close both channel 1 & 2.
+```
+PS D:\bin>
+PS D:\bin> .\usbrelay.exe -serial BIGFT -close 1 2
+Close channel 1 on BIGFT: success
+Close channel 2 on BIGFT: success
+
+Serial   C1   C2   C3   C4   C5   C6   C7   C8
+------  ---- ---- ---- ---- ---- ---- ---- ----
+SMLFT   ON   ON
+BIGFT   OFF  OFF
+```
 
 # license
 
