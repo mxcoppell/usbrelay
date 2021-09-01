@@ -32,7 +32,7 @@ namespace usbrelay
             return 0;
         }
 
-        public void open_close_channels(HashSet<int> on_channels, HashSet<int> off_channels)
+        public void on_off_channels(HashSet<int> on_channels, HashSet<int> off_channels)
         {
             int device_handle = open_device_handle(target_serial);
             if (device_handle == 0)
@@ -41,12 +41,12 @@ namespace usbrelay
             foreach (int i in on_channels)
             {
                 int retval = UsbRelayDeviceHelper.OpenOneRelayChannel(device_handle, i);
-                Console.WriteLine(String.Format("Open channel {0} on {1}: {2}", i, target_serial, open_close_channel_msg(retval)));
+                Console.WriteLine(String.Format("Open channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
             }
             foreach (int i in off_channels)
             {
                 int retval = UsbRelayDeviceHelper.CloseOneRelayChannel(device_handle, i);
-                Console.WriteLine(String.Format("Close channel {0} on {1}: {2}", i, target_serial, open_close_channel_msg(retval)));
+                Console.WriteLine(String.Format("Close channel {0} on {1}: {2}", i, target_serial, on_off_channel_msg(retval)));
             }
 
             UsbRelayDeviceHelper.Close(device_handle);
@@ -55,7 +55,7 @@ namespace usbrelay
             status();
         }
 
-        private string open_close_channel_msg(int status)
+        private string on_off_channel_msg(int status)
         {
             switch (status)
             {

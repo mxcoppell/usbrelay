@@ -13,7 +13,7 @@ namespace usbrelay
 {
     class Program
     {
-        enum Operations { NULL, LIST, STATUS, OPENCLOSE };
+        enum Operations { NULL, LIST, STATUS, ONOFF };
 
         static void Main(string[] args)
         {
@@ -24,10 +24,10 @@ namespace usbrelay
                 // command line data
                 Operations operation = Operations.NULL;
                 string serial = "";
-                var open_channels = new HashSet<int>();
-                var close_channels = new HashSet<int>();
+                var on_channels = new HashSet<int>();
+                var off_channels = new HashSet<int>();
 
-                parse_arguments(args, ref operation, ref serial, ref open_channels, ref close_channels);
+                parse_arguments(args, ref operation, ref serial, ref on_channels, ref off_channels);
 
                 // process commands
                 UsbRelayWrapper control = new UsbRelayWrapper(serial);
@@ -35,7 +35,7 @@ namespace usbrelay
                 {
                     case Operations.LIST: control.list(); break;
                     case Operations.STATUS: control.status(); break;
-                    case Operations.OPENCLOSE: control.open_close_channels(open_channels, close_channels); break;
+                    case Operations.ONOFF: control.on_off_channels(on_channels, off_channels); break;
                     default: break;
                 }
             }
@@ -48,40 +48,40 @@ namespace usbrelay
             Console.WriteLine();
             Console.WriteLine("SYNOPSIS");
             Console.WriteLine("\tusbrelay [ -list ] [ -status ] [ -serial serial-number ]");
-            Console.WriteLine("\t         [ -open channels ] [ -close channels ]");
+            Console.WriteLine("\t         [ -on channels ] [ -off channels ]");
             Console.WriteLine();
             Console.WriteLine("COMMAND LINE OPTIONS");
             Console.WriteLine("\t-list\t\tList all available serial numbers of USB-Relay devices connected.");
             Console.WriteLine();
-            Console.WriteLine("\t-status\t\tDisplay open/close status of all the channels on the USB-Relay devices connected.");
+            Console.WriteLine("\t-status\t\tDisplay on/off status of all the channels on the USB-Relay devices connected.");
             Console.WriteLine();
             Console.WriteLine("\t-serial serial-number");
             Console.WriteLine("\t\t\tSpecify the serial number of the USB-Relay device to operate.");
             Console.WriteLine();
-            Console.WriteLine("\t-open channels");
-            Console.WriteLine("\t\t\tOpen the relay channels specified.");
+            Console.WriteLine("\t-on channels");
+            Console.WriteLine("\t\t\tTurn on the relay channels specified.");
             Console.WriteLine();
-            Console.WriteLine("\t-close channels");
-            Console.WriteLine("\t\t\tClose the relay channels specified.");
+            Console.WriteLine("\t-off channels");
+            Console.WriteLine("\t\t\tTurn off the relay channels specified.");
             Console.WriteLine();
             Console.WriteLine("EXAMPLES");
             Console.WriteLine("\tusbrelay -list");
             Console.WriteLine();
             Console.WriteLine("\tusbrelay -status");
             Console.WriteLine();
-            Console.WriteLine("\tusbrelay -serial BITFT -open 1");
-            Console.WriteLine("\tusbrelay -serial BITFT -open 1 2 3");
+            Console.WriteLine("\tusbrelay -serial BITFT -on 1");
+            Console.WriteLine("\tusbrelay -serial BITFT -on 1 2 3");
             Console.WriteLine();
-            Console.WriteLine("\tusbrelay -serial BITFT -close 2");
-            Console.WriteLine("\tusbrelay -serial BITFT -close 2 5 6");
+            Console.WriteLine("\tusbrelay -serial BITFT -off 2");
+            Console.WriteLine("\tusbrelay -serial BITFT -off 2 5 6");
             Console.WriteLine();
-            Console.WriteLine("\tusbrelay -serial BITFT -open 1 -close 2");
-            Console.WriteLine("\tusbrelay -serial BITFT -open 1 3 5 -close 2 4 6");
+            Console.WriteLine("\tusbrelay -serial BITFT -on 1 -off 2");
+            Console.WriteLine("\tusbrelay -serial BITFT -on 1 3 5 -off 2 4 6");
             Console.WriteLine();
         }
 
         static void parse_arguments(string[] args, ref Operations operation, ref string serial, 
-            ref HashSet<int> open_channels, ref HashSet<int> close_channels)
+            ref HashSet<int> on_channels, ref HashSet<int> off_channels)
         {
             for (int arg_index = 0; arg_index < args.Length;)
             {
@@ -100,16 +100,16 @@ namespace usbrelay
                             serial = args[arg_index];
                         arg_index++;
                         break;
-                    case "-open":
-                        operation = Operations.OPENCLOSE;
+                    case "-on":
+                        operation = Operations.ONOFF;
                         if (++arg_index < args.Length)
-                            if (parse_channels(args, ref arg_index, ref open_channels) == false)
+                            if (parse_channels(args, ref arg_index, ref on_channels) == false)
                                 return;
                         break;
                     case "-close":
-                        operation = Operations.OPENCLOSE;
+                        operation = Operations.ONOFF;
                         if (++arg_index < args.Length)
-                            if (parse_channels(args, ref arg_index, ref close_channels) == false)
+                            if (parse_channels(args, ref arg_index, ref off_channels) == false)
                                 return;
                         break;
                     default:
