@@ -106,7 +106,7 @@ namespace usbrelay
                             if (parse_channels(args, ref arg_index, ref on_channels) == false)
                                 return;
                         break;
-                    case "-close":
+                    case "-off":
                         operation = Operations.ONOFF;
                         if (++arg_index < args.Length)
                             if (parse_channels(args, ref arg_index, ref off_channels) == false)
